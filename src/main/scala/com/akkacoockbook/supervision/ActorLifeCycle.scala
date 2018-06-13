@@ -22,7 +22,7 @@ class LifeCycleActor extends Actor {
 
   override def preStart(): Unit = println(s"sum in prestart is $sum")
 
-  override def receive = {
+  override def receive: PartialFunction[Any, Unit] = {
     case Error => throw new ArithmeticException()
     case _ => println("default msg")
   }
