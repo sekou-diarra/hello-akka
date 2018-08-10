@@ -11,7 +11,7 @@ class HelloAkkaStreamsSource extends GraphStage[SourceShape[String]]{
 
   val out: Outlet[String] = Outlet("SystemInputSource")
 
-  override def shape: SourceShape[String] = SourceShape(out)
+  override val shape: SourceShape[String] = SourceShape(out)
 
 
   override def createLogic(inheritedAttributes: Attributes): GraphStageLogic = new GraphStageLogic(shape) {
