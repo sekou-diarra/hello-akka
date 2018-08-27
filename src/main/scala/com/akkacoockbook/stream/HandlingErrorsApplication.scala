@@ -11,7 +11,7 @@ object HandlingErrorsApplication extends App {
 
   val streamDecider: Supervision.Decider = {
     case e: IndexOutOfBoundsException =>
-      println("Dropping element because of IndexOutOfBoundException. Resuming.")
+      println("Dropping element because of IndexOutOfBoundException. Resuming")
       Supervision.Resume
     case _ => Supervision.stop
   }
